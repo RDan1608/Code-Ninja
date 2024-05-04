@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: baseline;
+	align-content: center;
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 900px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.divtitle {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 900px;
+}
+
+.titulo{
+    color: white;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #2C303A;
+    height: 100px;
+    width: 900px;
+
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.create {
+    text-align: center;
+    background-color: #2C303A;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+    height: 150px;
+    width: 900px;
+}
+.divbotones{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.btn-success{
+   background-color: #47CF73;
+   margin: 10px;
+}
+
+.btn-secondary{
+    width: 300px;
+}
+
+.text{
+    color: white;
+    font-size: large;
+}
+.carpeta{
+    color: white;
+}
+
+li{
+    color: #ccc;
+}
+.divsec{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: stretch;
+	align-content: center;
+}
+
+.inputnom{
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.divcarpetas{
+    margin-top: 20px ;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: space-around;
+    width: 800px;
+    
+} 
+.alert {
+    position: fixed;
+    top: 20px; /* Ajusta esta distancia según tus preferencias */
+    right: 20px; /* Ajusta esta distancia según tus preferencias */
+    z-index: 9999; /* Asegura que las alertas estén por encima de otros elementos */
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 14px;
+}

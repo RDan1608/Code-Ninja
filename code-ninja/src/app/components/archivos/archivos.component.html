@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="divtitle">
+        
+        <h2 class="titulo">Proyectos</h2>
+
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar...">
+    </div> 
+    <form [formGroup]='formularioRegistro'>
+    <div class="create">
+    
+        <div class='divsec' >
+                <label class="titulo" for="nombreCarpeta">Nombre Proyecto</label>
+                <input  id="nombreCarpeta" formControlName="nombre" class="inputnom" type="text" required>
+          </div>
+          <div class='divsec'>
+                <label class="titulo" for="Descripcion">Descripcion</label>
+                <input id="Descripcion" formControlName="descripcion" class="inputnom" type="text" required>
+          </div> 
+      <div class="divbotones">
+        <button type="button" class="btn btn-success"><p class="text">Agregar Archivo</p></button>
+        <button type="button" (click)='crearProyectos()' class="btn btn-success"><p class="text">Nuevo Proyecto</p></button>
+      </div> 
+    </div>
+  </form> 
+  <div class="divcarpetas">
+        <app-archivo 
+            *ngFor="let proyecto of foldersData"
+            (buttonClick)="eliminarProyecto(proyecto._id)"
+            [proyectoData]="proyecto"
+           >
+        </app-archivo>
+  </div>
+<div *ngIf="mostrarAlerta" class="alert alert-success mt-2">
+  Proyecto Eliminado Exitosamente
+</div>
+
+<div *ngIf="mostrarAlerta1" class="alert alert-success mt-2">
+  Proyecto Creado Correctamente
+</div>
+
+<div *ngIf="mostrarAlerta2" class="alert alert-warning mt-2">
+  Campos vacios, no se puede crear un nuevo Proyecto
+</div>
+</div>

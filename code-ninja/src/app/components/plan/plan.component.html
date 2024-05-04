@@ -1,0 +1,14 @@
+
+     <div class="card"style="width: 18rem;">
+            <h1>{{ planData.nombre }}</h1>
+            <ul>
+                 <li *ngFor="let caracteristica of planData.caracteristicas">{{ caracteristica }}</li>
+            </ul>
+            <h2 class="precio">{{ planData.precio}}$</h2>
+           <button type="button" class="btn" [ngClass]="{
+               'btn-success': isSubscribed(planData._id),
+               'btn-warning': !isSubscribed(planData._id)
+               }" (click)="subscribeOrUnsubscribe(planData._id)">
+               {{ isSubscribed(planData._id) ? 'Suscrito' : 'Suscribirse' }}
+           </button>
+        </div>

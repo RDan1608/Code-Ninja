@@ -1,0 +1,49 @@
+<div class="divprincipal">
+    <div class="divhead">
+        <img class="logoCodeninja" src="../assets/img/logo_codeninja.png" alt="logo codeninja">
+        <p class="p1">CodeNinja</p>
+    </div>
+    <div class="divsection">
+        <div class="div1">
+            <h1>Sign Up</h1>
+             <a href="https://es-la.facebook.com/">
+            <button class="btn1">
+                <img class="logo" src="../assets/img/facebooklogo.png" alt="facebook">Inicia con Facebook
+            </button>
+            </a>
+        </div >
+
+        <div class="divider"></div>   
+        <form [formGroup]='formularioRegistro' >
+         <div class="div2">
+            <label class="l1" for="username1">Usuario</label>
+            <input formControlName="nombreUsuario" class="input1" id="username1" type="text" required>
+
+            <label class="l1" for="email1">Correo Electronico</label>
+            <input  formControlName="correo" class="input1" id="email1" type="email" required>
+
+            <label class="l1" for="password1">Contraseña</label>
+            <input  formControlName="contraseña" class="input1" id="password1" type="password" required>
+
+            <label class="l1" for="confirm_password">Confirmar Contraseña</label>
+            <input formControlName="confirmarContraseña" class="input1" id="confirm_password" type="password">
+            
+            <button type="button"(click)= "signUp()" class="btn btn-primary">Sign Up</button>
+         </div>   
+        </form>
+        
+    </div>
+    <div class="divfoot">
+        <p class="p1">Ya tienes una cuenta? <a class="link" href="" routerLink="/login">Iniciar Secion ahora</a></p>   
+    </div>
+    <div *ngIf="mostrarAlerta" class="alert alert-danger mt-2">
+       Formulario Invalido o Contraseña no coincide. Por favor, inténtalo de nuevo.
+    </div>  
+    <div *ngIf="mostrarAlerta1" class="alert alert-success mt-2">
+         USUARIO CREADO CON EXITOSO
+    </div>
+</div>    
+
+
+
+

@@ -1,0 +1,65 @@
+<form [formGroup]='formularioRegistro'>
+   <div class="divprincipal">
+    <div class="divperfil">
+        <div class="profile-image">
+            <img src="../assets/img/Usuario.png" alt="Foto de perfil">
+        </div>
+        <div class="user-info">
+            <h1>{{ userData.nombreUsuario }}</h1>
+            <p>{{ userData.correo }}</p>
+        </div>
+    </div>
+     <div class="divintroduccion">
+            <h2>Introducción</h2>
+            <div class='divgnom'>
+               <div class='divnombres'>
+                <label for="Nombre">Nombre</label>
+                <input id="Nombre" formControlName="nombre" class="inputnom" type="text">
+            </div>
+            <div class='divnombres'>
+                 <label for="Apellido">Apellido</label>
+                <input id="Apellido" formControlName="apellido" class="inputnom" type="text">
+            </div> 
+            </div>
+            <label for="Email">Correo Electronico</label> <input id="Email" formControlName="correo"  class="input1" type="text">
+            <label for="password1">Contraseña</label> <input id="password1" formControlName="contraseña" class="input1" type="text">
+            <label for="Biografia">Biografia</label> <textarea id="Biografia" formControlName="biografia" rows="4" cols="50"></textarea>
+            <div class="guardarfoto">
+                <label>Foto de Perfil</label>
+                <div class="profile-image">
+                    <img [src]="profileImageURL" alt="Foto de perfil">
+                </div>
+                <button type="button" class="btn btn-warning" (click)="removeProfilePhoto()">Eliminar Foto</button>
+                <button type="button" class="btn btn-success"><input class="file1" type="file" accept="image/*" (change)="onFileSelected($event)"></button>
+            </div>
+    </div>
+        <div class="divempresa">
+            <h2>Información de la Empresa</h2>
+            <label for="Profesion">Profesion</label> <input id="Profesion" formControlName="profesion"class="input1"  type="text">
+            <label for="Industria">Industria</label> <input id="Industria" formControlName="industria" class="input1"  type="text">
+            <label for="Situacion">Situacion Laboral</label> <input id="Situacion"formControlName="situacion" class="input1"  type="text">
+            <label for="Enlace">Enlace</label> <input id="Enlace" formControlName="enlace" class="input1"  type="url">
+        </div>
+        <div class="divfoot">
+            <button type="button" (click)= "eliminarUsuario()" class="btn btn-warning">Eliminar Cuenta</button>
+            <button type="button" (click)= "actulizarDatos()" class="btn btn-success">Guardar Cambios</button>
+     </div> 
+
+
+   
+    <div *ngIf="mostrarAlerta" class="alert alert-danger mt-2">
+         No se puede dejar los campos correo electronico y contraseña vacios
+    </div>
+    <div *ngIf="mostrarAlerta1" class="alert alert-success mt-2">
+         USUARIO ELIMINADO
+    </div>
+     <div *ngIf="mostrarAlerta2" class="alert alert-success mt-2">
+         DATOS DEL USUARIO ACTUALIZADOS
+    </div>
+
+</div> 
+
+</form>
+
+
+

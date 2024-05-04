@@ -1,0 +1,12 @@
+<div class="div1">
+    <div class="header">
+        <h1 class="title">Planes CodeNinja</h1>
+    </div>
+    <div class="container">
+       <app-plan
+       *ngFor="let plan of plansData"
+       [planData]="plan"
+       [userSubscribedPlans]="userSubscribedPlans"
+       [User]="User"
+       ></app-plan>
+</div>

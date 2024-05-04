@@ -1,0 +1,121 @@
+.divprincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.divperfil, .divintroduccion, .divempresa, .divfoot {
+    width: 80%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #444857;
+}
+
+p,h1,h2,label{
+    color: white;
+}
+
+.divperfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divintroduccion{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.inputnom{
+    width: 300px;
+
+}
+.divnombres{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap-reverse;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: center;
+}
+.divgnom{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: center;
+}
+
+
+.guardarfoto{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+    margin-top: 20px;
+}
+.divempresa{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.divfoot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-warning {
+    background-color: #CCCF47;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #47CF73;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.file1{
+    color: #ccc;
+    background-color: #47CF73;
+    border: radius 8px solid;
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px; 
+    z-index: 9999; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 14px;
+}

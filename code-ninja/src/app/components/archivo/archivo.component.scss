@@ -1,0 +1,30 @@
+.container {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    margin: 10px;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    margin: 4px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .logo {
+    width: auto;
+    height: auto;
+  }
+
+.titulo{
+    color: white;
+}

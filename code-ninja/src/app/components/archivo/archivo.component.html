@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="logo">
+    <a [routerLink]="'/code/'+proyectoData._id">
+    <img width="100px" src="../assets/img/Carpetalogo.png" alt="">
+     </a>
+  </div>
+
+  <h6 class='titulo'>{{ proyectoData.nombre }}</h6>
+  <div class='botones'>
+      <button type="button" data-toggle="modal" [attr.data-target]="'#exampleModalCenter-' + proyectoData._id" class="btn btn-success">Actulizar</button>
+      <button type="button" (click)="childButtonClicked()" class="btn btn-warning">Eliminar</button>
+  </div>
+</div>
+
+<div class="modal fade" [id]="'exampleModalCenter-' + proyectoData._id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"  id="exampleModalCenterTitle">Actualizar Proyecto {{ proyectoData.nombre }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="proyectoForm" (click)="guardarCambios()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="nombreCarpeta">Nombre de Proyecto</label>
+            <input formControlName="nombre" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="descripcionCarpeta">Descripción de Proyecto</label>
+            <input formControlName="descripcion" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary"  >Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

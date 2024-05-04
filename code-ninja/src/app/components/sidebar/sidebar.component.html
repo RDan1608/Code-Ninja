@@ -1,0 +1,229 @@
+<nav class="navbar navbar-expand-lg side-bar">
+  <div *ngIf="loginOptions === true" class="container d-flex flex-column">
+    <div class="row justify-content-center">
+      <div class="col-auto col-md-auto col-lg-auto">
+        <img
+          class="logoCodeninja"
+          src="../assets/img/logo_codeninja.png"
+          alt="logo codeninja"
+        />
+      </div>
+      <div class="col-12 col-md-12 col-lg-12">
+        <p class="text-center">CodeNinja</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-12">
+        <p class="try-paragraph">INTENTA TU EDITOR ONLINE</p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-12 col-md-12 col-lg-12">
+        <button type="button" (click)="navegarLandingpage()" class="btn btn-lg try-btn">COMENZAR</button>
+      </div>
+    </div>
+
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-12 col-lg-12">
+        <a href="" routerLink="/login"><h6>Inicia sesión</h6></a>
+        <a href="" routerLink="/signup"><h6>Registrarse</h6></a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="profileOptions === true" class="container d-flex flex-column">
+    <div class="row justify-content-center">
+      <div class="col-auto col-md-auto col-lg-auto">
+        <img
+          class="logoCodeninja"
+          src="../assets/img/logo_codeninja.png"
+          alt="logo codeninja"
+        />
+      </div>
+      <div class="col-12 col-md-12 col-lg-12">
+        <p class="text-center">CodeNinja</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-start">
+      <div class="row-12 col-md-12 col-lg-12">
+        <a   (click)="navegarFolder()"><h6>Crear Nuevo Proyecto</h6></a> 
+        <a   (click)="navegarPerfil()"><h6>Perfil</h6></a>
+        <a   (click)="navegarColor()"><h6>Configuracion de Temas</h6></a>
+        <a   (click)="navegarPlanes()"><h6>Planes</h6></a>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 col-md-12 col-lg-12">
+        <button (click)="navegarLandingpage()" type="button" class="btn btn-sm try-btn">Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="codeOptions === true" class="container d-flex flex-column">
+    <div class="row d-flex flex-column">
+      <div
+        class="col-auto d-flex flex-column align-items-center mb-3 sidebar-options"
+      >
+        <img class="logoCodeninja" src="../assets/img/pencil.svg" alt="logo" />
+        <h6 class="text-white">Editor</h6>
+      </div>
+      <div
+        class="col-auto d-flex flex-column align-items-center mb-3 sidebar-options"
+        data-toggle="modal"
+        data-target="#downloadModal"
+      >
+        <img
+          class="logoCodeninja"
+          src="../assets/img/download.svg"
+          alt="logo"
+        />
+        <h6 class="text-white">Descargar</h6>
+      </div>
+      <div
+        class="col-auto d-flex flex-column align-items-center mb-3 sidebar-options"
+        data-toggle="modal"
+        data-target="#shareModal"
+      >
+        <img class="logoCodeninja" src="../assets/img/share.svg" alt="logo" />
+        <h6 class="text-white">Compartir</h6>
+      </div>
+    
+    </div>
+  </div>
+</nav>
+
+<div
+  class="modal fade"
+  id="shareModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content share-modal">
+      <div class="modal-header border-0 text-white">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Compartir este proyecto
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <p>Ingresa el nombre de usuario del usuario a compartir</p>
+          </div>
+          <div class="col-12">
+            <div class="col">
+              <h6>Usuario</h6>
+              <input
+                type="text"
+                class="form-control user-input"
+                placeholder="eralejo2003"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="emitShare()">Compartir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="downloadModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content share-modal">
+      <div
+        class="modal-header border-0 text-white text-center align-items-center"
+      >
+        <img class="logoCodeninja" src="../assets/img/folder.svg" alt="logo" />
+        <h5 class="modal-title" id="exampleModalLabel">Proyecto1.rar</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-center mb-3">
+          <div class="col-auto">
+            <button type="button" class="btn btn-success" data-dismiss="modal" (click)="emitDownload()">
+              Descargar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="snippetModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content share-modal">
+      <div
+        class="modal-header border-0 text-white text-center align-items-center"
+      >
+        <img class="logoCodeninja" src="../assets/img/folder.svg" alt="logo" />
+        <h5 class="modal-title" id="exampleModalLabel">Proyecto1.rar</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-cente">
+          <div class="col-12">
+            <select class="form-select snippet-select" aria-label="Default select example">
+              <option selected>Crear Snippet</option>
+              <option value="1">HTML</option>
+              <option value="2">CSS</option>
+              <option value="3">JS</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Crear</button>
+      </div>
+    </div>
+  </div>
+</div>

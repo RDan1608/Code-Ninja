@@ -1,0 +1,35 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Barra de navegación */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  /* Contenedor principal */
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  
+  /* Secciones izquierda y derecha */
+  .left-section, .right-section {
+    width: 45%; /* Ajusta el ancho según tus preferencias */
+    padding: 1rem;
+  }
+  
+  /* Pie de página */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  

@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="divtitle">
+        
+        <h2 class="titulo">Carpetas</h2>
+
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar...">
+    </div>
+    <div class="create">
+      <form [formGroup]='formularioRegistro'>
+                <div class='divcrear'>
+          <div class='divsec' >
+                <label class="titulo" for="nombreCarpeta">Nombre Carpeta</label>
+                <input  id="nombreCarpeta" formControlName="nombre" class="inputnom" type="text" required>
+          </div>
+          <div class='divsec'>
+                <label class="titulo" for="Descripcion">Descripcion</label>
+                <input id="Descripcion" formControlName="descripcion" class="inputnom" type="text" required>
+          </div> 
+        <button class="btn btn-success" (click)='CrearCarpetas()' type="button">Crear Nueva Carpeta</button>
+    </div> 
+      </form>
+  
+    </div>
+ <div class="divcarpetas">
+        <app-carpeta 
+            *ngFor="let carpeta of carpetasData"
+            (buttonClick)="eliminarCarpeta(carpeta._id)"
+            [carpetaData]="carpeta"
+           >
+        </app-carpeta>
+  </div>
+
+<div *ngIf="mostrarAlerta" class="alert alert-success mt-2">
+  Carpeta Eliminada Exitosamente
+</div>
+
+<div *ngIf="mostrarAlerta1" class="alert alert-success mt-2">
+  Carpeta Creada Correctamente
+</div>
+
+<div *ngIf="mostrarAlerta2" class="alert alert-warning mt-2">
+  Campos vacios, no se puede crear una nueva carpeta
+</div>
+</div>
+
+
+
+
+ 

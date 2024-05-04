@@ -1,0 +1,86 @@
+/* Estilos para los divs */
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-around;
+	align-items: center;
+	align-content: center;
+    height: 100vh;
+    margin-top: 80px;
+    gap: 20px;
+  }
+  
+  .left-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	  align-items: center;
+	  align-content: center;
+    margin-top: 20px;
+    
+
+  }
+  .right-div{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    height: 100%;
+  }
+  
+  .theme1,.theme2,.theme3 {
+    margin-bottom: 60px;
+    background-color: #2C303A;
+    width: 350px;
+    padding-left: 40px;
+
+  }
+  
+  label {
+    color: white;
+    vertical-align:auto
+  }
+  
+  h2{
+    color: white;
+  }
+
+  input[type="radio"]:checked + label::before {
+    background-color: #47CF73
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+  }
+  input[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    background-color: #fff;
+    width: 15px; 
+    height: 15px;
+    border: 2px solid #fff; 
+    border-radius: 50%; 
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  pre{
+    color: black;
+    width: 600px;
+    height: 400px;
+    font-weight: bolder;
+    font-size: medium;
+  }
+  
+.pagina{
+    background-color: white;
+  }
+
+.btn-primary{
+    color: black;
+    font-weight: 900;
+    background-color: #47CF73;
+}
